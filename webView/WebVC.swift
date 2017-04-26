@@ -8,11 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WebVC: UIViewController {
+    @IBOutlet weak var webV: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    func getVideo(videoCode: String)
+    {
+        let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
+        webV.loadRequest(URLRequest(url:url!))
     }
 
     override func didReceiveMemoryWarning() {
